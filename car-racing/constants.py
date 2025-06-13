@@ -1,6 +1,7 @@
 import pygame
 from .utils import scale_image
 
+pygame.font.init()
 
 GRASS = scale_image(pygame.image.load("car-racing/imgs/grass.jpg"), 2.5)
 TRACK = scale_image(pygame.image.load("car-racing/imgs/track.png"), 0.9)
@@ -18,6 +19,8 @@ GREEN_CAR = scale_image(pygame.image.load("car-racing/imgs/green-car.png"), 0.55
 WIDTH, HEIGHT = TRACK.get_width(), TRACK.get_height()
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+
+MAIN_FONT = pygame.font.SysFont("comicsans", 44)
 
 FPS = 60
 

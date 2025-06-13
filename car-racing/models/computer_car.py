@@ -3,6 +3,7 @@ import pygame
 from ..constants import GREEN_CAR
 from .car import AbstractCar
 
+
 class ComputerCar(AbstractCar):
     IMG = GREEN_CAR
     START_POS = (150, 200)
@@ -45,7 +46,9 @@ class ComputerCar(AbstractCar):
     def update_path_point(self):
         target = self.path[self.current_point]
         if self.img:
-            rect = pygame.Rect(self.x, self.y, self.img.get_width(), self.img.get_height())
+            rect = pygame.Rect(
+                self.x, self.y, self.img.get_width(), self.img.get_height()
+            )
         else:
             rect = pygame.Rect(self.x, self.y, 20, 20)  # Default size
         if rect.collidepoint(*target):
@@ -58,3 +61,8 @@ class ComputerCar(AbstractCar):
         self.calculate_angle()
         self.update_path_point()
         super().move()
+
+    def next_level(self, level):
+        self.reset()
+        self.vel = self.max_vel + (level - 1) * 0.2
+        self.current_point = 0
