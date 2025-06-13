@@ -3,10 +3,11 @@ from ..utils import blit_rotate_center
 import math
 import pygame
 
+
 class AbstractCar(ABC):
     IMG = None  # To be overridden by subclasses
     START_POS = (0, 0)  # To be overridden by subclasses
-    
+
     def __init__(self, max_vel, rotation_vel):
         self.img = self.IMG
         self.max_vel = max_vel

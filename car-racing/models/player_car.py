@@ -1,6 +1,7 @@
 from ..constants import RED_CAR
 from .car import AbstractCar
 
+
 class PlayerCar(AbstractCar):
     IMG = RED_CAR
     START_POS = (180, 200)
